@@ -3,13 +3,22 @@ import './App.css';
 import Welcome from './components/Welcome'
 import Login from './components/Login'
 
-function App() {
-  return (
-    <div className="app">
-      <Welcome />
-      <Login />
-    </div>
-  );
+class App extends React.Component {
+
+  state = {
+    username: null
+  }
+
+  login = () => window.open('http://localhost:3001/api/v1/users/auth/linkedin', "_self")
+
+  render() {
+    return (
+      <div className="app">
+        <Welcome />
+        <Login login={this.login} />
+      </div>
+    );
+  }
 }
 
 export default App;

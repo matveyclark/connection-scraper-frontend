@@ -1,4 +1,5 @@
 /* Global resets */
+
 *,
 *::before,
 *::after {
@@ -16,6 +17,7 @@ body {
 }
 
 /* App component */
+
 .app {
   display: flex;
   width: 100vw;
@@ -26,11 +28,13 @@ body {
 }
 
 /* Welcome component */
+
 .section-title {
   font-size: 3rem;
 }
 
 /* Login component */
+
 .login-btn {
   width: 40%;
   margin-left: 25%;
