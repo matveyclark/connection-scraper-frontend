@@ -1,38 +1,42 @@
-.App {
-  text-align: center;
+/* Global resets */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-size: 62.5%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* App component */
+.app {
   display: flex;
-  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+/* Welcome component */
+.section-title {
+  font-size: 3rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Login component */
+.login-btn {
+  width: 40%;
+  margin-left: 25%;
+}
+
+.login-link {
+  margin: 0 auto;
+  display: inline-block;
 }
