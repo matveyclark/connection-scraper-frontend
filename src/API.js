@@ -2,6 +2,7 @@
 
 const baseURI = 'http://localhost:3001/api/v1/users'
 const loginURI = baseURI + '/login/success'
+const logoutURI = baseURI + '/auth/logout'
 
 // api
 
@@ -18,3 +19,5 @@ const get = url => fetch(url, {
 // functions
 
 exports.fetchUser = () => get(loginURI)
+
+exports.logoutUser = () => get(logoutURI)

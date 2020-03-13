@@ -2,10 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import loginBtn from '../images/loginButton.png'
 
-export default function Login({ login }) {
+export default function Auth({ login, logout }) {
     return (
-        <React.Fragment>
+        <div className="auth-buttons">
             <Link onClick={login} className="login-link"><img className="login-btn" src={loginBtn} alt="LinkedIn login button"/></Link>
-        </React.Fragment>
+            <Link onClick={logout}>Logout</Link>
+        </div>
     )
 }

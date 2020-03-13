@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Welcome from './components/Welcome'
-import Login from './components/Login'
+import Auth from './components/Auth'
 import API from './API'
 
 class App extends React.Component {
@@ -13,7 +13,7 @@ class App extends React.Component {
   componentDidMount() {
     return API.fetchUser()
     .then(data => {
-      if(data.status === 'error') throw Error(data.message)
+      if(data.status === 'success')
       this.setState({
         ...this.state,
         username: data.user.username
@@ -23,11 +23,21 @@ class App extends React.Component {
 
   login = () => window.open('http://localhost:3001/api/v1/users/auth/linkedin', "_self")
 
+  logout = () => {
+    API.logoutUser()
+    return this.setState({
+      ...this.state,
+      username: null
+    })
+  }
+
   render() {
     return (
       <div className="app">
         <Welcome />
-        <Login login={this.login} />
+        <Auth 
+        logout={this.logout}
+        login={this.login} />
       </div>
     );
   }
